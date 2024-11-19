@@ -1,0 +1,1 @@
+This repo contains steps to reproduce an interesting discovery where gcc tries to auto-vectorzie bubble sort and lead to significant performance drops. 
