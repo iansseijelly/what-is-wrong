@@ -1,3 +1,4 @@
 echo "Cleaning up..."
-# remove everything that does not end in .c, .sh, or .txt
-find . -type f ! -name '*.c' ! -name '*.sh' ! -name '*.txt' -exec rm -f {} \;
+# remove everything that ends in .bin, .dump, or .gcov
+rm -f *.bin *.dump *.gcov *.gcda
+rm -f perf.data perf.data.*
