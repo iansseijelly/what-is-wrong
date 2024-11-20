@@ -11,11 +11,11 @@ lscpu
 
 $COMPILER_PATH --version
 
-$COMPILER_PATH ${TARGET}.c -o ${TARGET}.bin
+$COMPILER_PATH ${TARGET}.c -o ${TARGET}.bin -g
 $COMPILER_PATH -O0 ${TARGET}.c -o ${TARGET}_0.bin -g
 $COMPILER_PATH -O1 ${TARGET}.c -o ${TARGET}_1.bin -g
-$COMPILER_PATH -O2 ${TARGET}.c -o ${TARGET}_2.bin -g
-$COMPILER_PATH -O3 ${TARGET}.c -o ${TARGET}_3.bin -g 
+$COMPILER_PATH -O2 ${TARGET}.c -o ${TARGET}_2.bin -g -fopt-info
+$COMPILER_PATH -O3 ${TARGET}.c -o ${TARGET}_3.bin -g -fopt-info
 $COMPILER_PATH -O3 ${TARGET}.c -o ${TARGET}_3_no_vectorize.bin -g -fno-tree-vectorize
 
 echo "---running original---"
