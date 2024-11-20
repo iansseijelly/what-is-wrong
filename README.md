@@ -69,3 +69,5 @@ void bubble_sort (uint32_t *a, uint32_t n) {
 This inefficient use of fixed-width simd registers made the code ~2x worse than O0 and ~5.5x worse than O3 with vectorization explicitly disabled. 
 However, this also means the part for populating arrays are not vectorized, leading to performance drops. 
 This phenomenum of pathologically using avx for sorting is not observable on clang+x86, clang+arm, gcc+arm, or gcc+riscv. 
+
+Additionally, when use fdo or autofdo in gcc11, it seems that gcc also tries to vectorize the sorting basic block, despite under O2 (where %xmm should not be used at all). 
